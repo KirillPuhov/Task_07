@@ -24,14 +24,17 @@ public class Main {
         solution(new int[]{0,1,3,4,5,6,7,8,9});
         solution(new int[]{2,2,2,1});
         solution(new int[]{1,2,3,2,2});
+        solution(new int[]{1,2,2,3});
     }
 
     private static void randomArrQuestion(){
         System.out.println("Задать произвольный массив в качестве входных данных?");
         String answer = scan.nextLine().toUpperCase();
+        System.out.println("Задайте кол-во элементов: ");
+        int size = scan.nextInt();
 
         if(answer.equals("YES"))
-            solution(randomizeArray());
+            solution(randomizeArray(size));
     }
 
     private static void solution(int[] arr){
@@ -65,9 +68,8 @@ public class Main {
         System.out.println("------------------------------------------------");
     }
 
-    private static int[] randomizeArray(){
+    private static int[] randomizeArray(int size){
         var rand = new Random();
-        int size = rand.nextInt(50);
 
         int[] array = new int[size];
 
